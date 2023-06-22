@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch1 Lecture 64 Access form elements</title>
+</head>
+
+<body>
+
+    <form onsubmit="submitForm(event)">
+        <input id="n1" type="text" name="num1" placeholder="FIRST THE VALUE 1">
+        <input data-n2="n2" type="text" name="num2" placeholder="LAST THE VALUE2">
+        <input type="submit" value="submit">
+
+    </form>
+
+    <script>
+        // function defiantion
+
+        submitForm = (e) => {
+            //function body
+            e.preventDefault();
+
+            let n1 = document.getElementById('n1').value;
+            n1 = parseInt(n1);
+            console.log(typeof n1);
+
+            var n2 = document.querySelector('input[data-n2="n2"]').value;
+            n2 = parseInt(n2);
+            console.log(typeof n2);
+
+           // var x = console.log(n1 + n2)
+
+          //  console.log(typeof x)
+
+
+
+           window.localStorage.setItem('Result', n1+n2);
+        }
+    </script>
+
+</body>
+
+</html>
